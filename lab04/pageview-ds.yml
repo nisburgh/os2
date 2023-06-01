@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: pageview
+spec:
+  selector:
+    matchLabels:
+      app: pageview
+  template:
+    metadata:
+      labels:
+        app: pageview
+    spec:
+      containers:
+      - name: pageview
+        image: docker.io/nisburgh/pageview:v1.0
